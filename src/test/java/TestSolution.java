@@ -11,4 +11,9 @@ public class TestSolution {
     public void maxUncrossedLinesTest2() {
         Assert.assertEquals(3, new Solution().maxUncrossedLines(new int[]{2,5,1,2,5}, new int[]{10,5,2,1,5,2}));
     }
+
+    @Test
+    public void maxUncrossedLinesTest3() {
+        Assert.assertEquals(3, new Solution().maxUncrossedLines(new int[]{1,1,2,1,2}, new int[]{1,3,2,3,1}));
+    }
 }

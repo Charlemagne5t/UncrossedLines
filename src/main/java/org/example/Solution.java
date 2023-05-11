@@ -16,6 +16,17 @@ public class Solution {
                 }
             }
         }
-        return count;
+        int count2 = 0;
+        int newStart2 = 0;
+        for (int i = 0; i < nums2.length; i++) {
+            for (int j = newStart2; j < nums1.length ; j++) {
+                if(nums2[i] == nums1[j]){
+                    count2++;
+                    newStart2 = j + 1;
+                    break;
+                }
+            }
+        }
+        return Math.max(count2, count);
     }
 }
