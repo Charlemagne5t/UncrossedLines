@@ -5,6 +5,10 @@ package org.example;
 // are uncrossed, can we write this as a recursion
 public class Solution {
     public int maxUncrossedLines(int[] nums1, int[] nums2) {
-
+        return 2;
     }
+
+
+
+
 }
