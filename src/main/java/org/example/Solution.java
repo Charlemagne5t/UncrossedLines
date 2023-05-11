@@ -5,19 +5,19 @@ package org.example;
 // are uncrossed, can we write this as a recursion
 public class Solution {
     public int maxUncrossedLines(int[] nums1, int[] nums2) {
-        int n = nums1.length;
-        int m = nums2.length;
-        int[][] dp = new int[n + 1][m + 1];
+        int m = nums1.length;
+        int n = nums2.length;
+        int[][] dp = new int[m + 1][n + 1];
 
-        for (int i = 0; i < n + 1; i++) {
+        for (int i = 0; i < m + 1; i++) {
             dp[i][0] = 0;
         }
-        for (int j = 0; j < m + 1; j++) {
+        for (int j = 0; j < n + 1; j++) {
             dp[0][j] = 0;
         }
 
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j < m + 1; j++) {
+        for (int i = 1; i < m + 1; i++) {
+            for (int j = 1; j < n + 1; j++) {
                 if (nums1[i - 1] == nums2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
@@ -25,19 +25,17 @@ public class Solution {
                 }
             }
         }
-
-
-        return dp[n][m];
+        print2DArray(dp);
+        return dp[m][n];
     }
 
     public static void print2DArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
     }
-
 }
 
